@@ -10,7 +10,18 @@
 <title> Moji </title>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800|Noto+Sans+KR:300,400,500,700" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/common.css" />
-<link rel="stylesheet" href="assets/css/aos.css" /> 
+<link rel="stylesheet" href="assets/css/aos.css" />
+<link rel="stylesheet" href="assets/css/moji.css" /> 
+
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/jcf.js"></script>
+<script src="assets/js/jcf.select.js"></script>
+
+<script src="assets/js/fx.es5.min.js"></script>
+<script src="assets/js/moji.js"></script>
 
 </head>
 
@@ -27,37 +38,37 @@
 	<!-- 공통 header -->
 	<header id="header">
 		<div class="w-header">
-			<h1 class="logo"><a href="#"><span class="a11y">Moji 디지털, 쇼핑하다</span></a></h1>	
+			<h1 class="logo"><a href="/"><span class="a11y">Moji 디지털, 쇼핑하다</span></a></h1>	
 			<span class="btn-gnb-open"><button><span class="a11y">메뉴 열기</span></button></span>
 			
 			<!-- main input 영역 -->
 			<span class="bg-wh"></span>
 			<ul class="area-inp">
 				<li>
-					<span class="input-base input-st1 small"><input type="text" placeholder="홈페이지 URL을 입력해주세요." class="inp"></span>
+					<span class="input-base input-st1 small"><input type="text" placeholder="홈페이지 URL을 입력해주세요." class="inp target-url"></span>
 				</li>
 				<li>
 					<span class="select-base">
-						<select class="select-st1 select-st1-small">
+						<select class="select-st1 select-st1-small business-type">
 							<option class="hideme">업종선택</option>
-							<option value="">전자상거래 (상품) - 의류, 화장품 등</option>
-							<option value="">전자상거래(서비스) - 여행, 공연, 전시 등</option>
-							<option value="">영업(상담/구독) - 병의원, 솔루션 등</option>
-							<option value="">콘텐츠 확산(조회) -  미디어, 언론</option>
+							<option value="전자상거래(상품)">전자상거래 (상품) - 의류, 화장품 등</option>
+							<option value="전자상거래(서비스)">전자상거래(서비스) - 여행, 공연, 전시 등</option>
+							<option value="영업(상담/구독)">영업(상담/구독) - 병의원, 솔루션 등</option>
+							<option value="콘텐츠 확산(조회)">콘텐츠 확산(조회) -  미디어, 언론</option>
 						</select>
 					</span>	
 				</li>
 				<li>
 					<span class="select-base">
-						<select class="select-st1 select-st1-small">
+						<select class="select-st1 select-st1-small has-ad">
 							<option class="hideme">광고비용 여부</option>
-							<option value="">유</option>
-							<option value="">무</option>
+							<option value="true">유</option>
+							<option value="false">무</option>
 						</select>
 					</span>	
 				</li>
 				<li>
-					<span class="btn-base btn-st1 small"><a href="#">분석하기</a></span>
+					<span class="btn-base btn-st1 small"><a class="btn-process-header" href="#">분석하기</a></span>
 				</li>
 			</ul>
 			<!-- //main input 영역 -->
@@ -67,10 +78,10 @@
 				<div class="w-gnb">
 					<nav class="inner">
 						<ul class="glink">
-							<li class="l01"><a href="#">Home</a></li>
-							<li class="l02"><a href="#">Shop</a></li>
-							<li class="l03"><a href="#">About Us</a></li>
-							<li class="l04"><a href="#">마케팅 상담 신청하기</a></li>
+							<li class="l01"><a href="index.html">Home</a></li>
+							<li class="l02"><a href="shop-list.html">Shop</a></li>
+							<li class="l03"><a href="aboutus.html">About Us</a></li>
+							<li class="l04"><a href="apply-service.html">마케팅 상담 신청하기</a></li>
 						</ul>
 					</nav>
 					<span class="btn-gnb-close"><button><span class="a11y">메뉴 닫기</span></button></span>
@@ -99,27 +110,25 @@
 							</p>							
 							<ul class="area-inp" data-aos="fade-right" data-aos-delay="300">		
 								<li>
-									<span class="input-base input-st1"><input type="text" placeholder="홈페이지 URL을 입력해주세요."></span>
+									<span class="input-base input-st1"><input type="text" placeholder="홈페이지 URL을 입력해주세요." class="target-url"></span>
 								</li>
 								<li>
 									<span class="select-base">
-										<select class="select-st1" id="sel-type">
+										<select class="select-st1 business-type" id="sel-type">
 											<option class="hideme">업종선택</option>
-											<option value="0">test - 구독형</option>
-											<option value="1">test - 유무형</option>
-											<option value="">전자상거래 (상품) - 의류, 화장품 등</option>
-											<option value="">전자상거래(서비스) - 여행, 공연, 전시 등</option>
-											<option value="">영업(상담/구독) - 병의원, 솔루션 등</option>
-											<option value="">콘텐츠 확산(조회) -  미디어, 언론</option>
+											<option value="전자상거래(상품)">전자상거래 (상품) - 의류, 화장품 등</option>
+											<option value="전자상거래(서비스)">전자상거래(서비스) - 여행, 공연, 전시 등</option>
+											<option value="영업(상담/구독)">영업(상담/구독) - 병의원, 솔루션 등</option>
+											<option value="콘텐츠 확산(조회)">콘텐츠 확산(조회) -  미디어, 언론</option>
 										</select>
 									</span>	
 								</li>
 								<li>
 									<span class="select-base">
-										<select class="select-st1">
+										<select class="select-st1 has-ad">
 											<option class="hideme">광고비용 여부</option>
-											<option value="">유</option>
-											<option value="">무</option>
+											<option value="true">유</option>
+											<option value="false">무</option>
 										</select>
 									</span>	
 								</li>
@@ -144,113 +153,51 @@
 							<p class="exp01">loading...</p>
 							<div class="track"><span class="bar"></span></div>
 							<p class="exp02">
-								문의하신 홈페이지 <em>tour&travel.co.kr</em> 을 분석 중입니다.<br />
+								문의하신 홈페이지 <em class="inputed-url"></em> 을 분석 중입니다.<br />
 								조금만 기다리시면 홈페이지의 마케팅 레벨을 확인할 수 있습니다.
 							</p>
 						</div>
 						
 						<!-- ------------------------------------------------------- 구독형 -->
 						<!-- 구독형 레벨 0 -->
-						<div class="mpcs-box ly-inner step-s-0">
+
+						<div class="mpcs-box ly-inner step-s">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
-							<p class="area-step"><em>0</em>단계</p>
-							<p class="area-step-exp1">아직 마케팅 활동 및 분석이 진행되지 않고 있네요.</p>
+							<p class="area-step"><em class="moji-an-step"></em>단계</p>
+							<p class="area-step-exp1 moji-an-description"></p>
 							<ul class="area-state">
 								<li>
 									<span class="tit">유저 유입 분석</span>
-									<span class="state">없음</span>
+									<span class="state moji-an-an">없음</span>
 								</li>
 								<li>
 									<span class="tit">마케팅 활동</span>
-									<span class="state">없음</span>
+									<span class="state moji-an-mact">없음</span>
 								</li>
 								<li>
 									<span class="tit">마케팅 자동화</span>
-									<span class="state">없음</span>
+									<span class="state moji-an-ma">없음</span>
 								</li>
 							</ul>
 							<p class="area-step-exp2">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
+								홈페이지의 유입분석 레벨을 올리고 싶다면? <em><a href="shop-view1.html">‘통합 리포트’</a></em><br />
+								유저의 홈페이지 이탈을 막고 싶다면? <em><a href="shop-list.html">‘마케팅 자동화’</a></em>
 							</p>
 							<ul class="area-button">
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-mark">통합 리포트</a></span></li>
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-inc">마케팅 자동화</a></span></li>
+								<li><span class="btn-base btn-st1"><a href="shop-view1.html" class="btn-go-mark">통합 리포트</a></span></li>
+								<li><span class="btn-base btn-st1"><a href="shop-list.html" class="btn-go-inc">마케팅 자동화</a></span></li>
 							</ul>
 						</div>
-						
-						<!-- 구독형 레벨 1 -->
-						<div class="mpcs-box ly-inner step-s-1">
-							<p class="area-ask">
-								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
-							</p>
-							<p class="area-step"><em>1</em>단계</p>
-							<p class="area-step-exp1">유저의 행동분석을 위한 준비가 되어있으시군요!</p>
-							<ul class="area-state">
-								<li class="on">
-									<span class="tit">유저 유입 분석</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">마케팅 활동</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li>
-									<span class="tit">마케팅 자동화</span>
-									<span class="state">없음</span>
-								</li>
-							</ul>
-							<p class="area-step-exp2">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
-							</p>
-							<ul class="area-button">
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-mark">통합 리포트</a></span></li>
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-inc">마케팅 자동화</a></span></li>
-							</ul>
-						</div>
-						
-						<!-- 구독형 레벨 2 -->
-						<div class="mpcs-box ly-inner step-s-2">
-							<p class="area-ask">
-								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
-							</p>
-							<p class="area-step"><em>2</em>단계</p>
-							<p class="area-step-exp1">유저의 행동 분석과 이탈을 막기 위한 마케팅 활동을 하고 계시네요!</p>
-							<ul class="area-state">
-								<li class="on">
-									<span class="tit">유저 유입 분석</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">마케팅 활동</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">마케팅 자동화</span>
-									<span class="state">진행 중</span>
-								</li>
-							</ul>
-							<p class="area-step-exp2">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
-							</p>
-							<ul class="area-button">
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-mark">통합 리포트</a></span></li>
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-inc">마케팅 자동화</a></span></li>
-							</ul>
-						</div>
+
 						
 						<!-- 구독형 마케팅 보고서 -->
 						<div class="mpcs-box ly-inner step-s-mark">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
 							<p class="area-step">마케팅 보고서</p>
 							<p class="area-step-exp1">
@@ -271,7 +218,7 @@
 						<div class="mpcs-box ly-inner step-s-inc">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
 							<p class="area-step">매출 증대 방안</p>
 							<p class="area-step-exp1">
@@ -298,12 +245,12 @@
 						<div class="mpcs-box ly-inner step-s-ana">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
 							<p class="area-step">분석 도구 설치</p>
 							<p class="area-step-exp1">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
+								홈페이지의 유입분석 레벨을 올리고 싶다면? <em><a href="shop-view1.html">‘통합 리포트’</a></em><br />
+								유저의 홈페이지 이탈을 막고 싶다면? <em><a href="shop-list.html">‘마케팅 자동화’</a></em>
 							</p>
 							<ul class="area-state">
 								<li class="on">
@@ -323,146 +270,38 @@
 						
 						<!-- ------------------------------------------------------- 유무형 -->
 						<!-- 유무형 레벨 0 -->
-						<div class="mpcs-box ly-inner step-or-0">
+						<div class="mpcs-box ly-inner step-or">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
-							<p class="area-step"><em>0</em>단계</p>
-							<p class="area-step-exp1">아직 마케팅 활동 및 분석이 진행되지 않고 있네요.</p>
+							<p class="area-step"><em class="moji-an-step"></em>단계</p>
+							<p class="area-step-exp1 moji-an-description"></p>
 							<ul class="area-state">
 								<li>
 									<span class="tit">유저 유입 분석</span>
-									<span class="state">없음</span>
+									<span class="state moji-an-an"></span>
 								</li>
 								<li>
 									<span class="tit">마케팅 활동</span>
-									<span class="state">없음</span>
+									<span class="state moji-an-mact"></span>
 								</li>
 								<li>
 									<span class="tit">전환 활동 분석</span>
-									<span class="state">없음</span>
+									<span class="state moji-an-conversion"></span>
 								</li>
 								<li>
 									<span class="tit">마케팅 자동화</span>
-									<span class="state">없음</span>
+									<span class="state moji-an-ma"></span>
 								</li>
 							</ul>
 							<p class="area-step-exp2">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
+								홈페이지의 유입분석 레벨을 올리고 싶다면? <em><a href="shop-view1.html">‘통합 리포트’</a></em><br />
+								유저의 홈페이지 이탈을 막고 싶다면? <em><a href="shop-list.html">‘마케팅 자동화’</a></em>
 							</p>
 							<ul class="area-button">
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-mark">통합 리포트</a></span></li>
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-inc">마케팅 자동화</a></span></li>
-							</ul>
-						</div>
-						
-						<!-- 유무형 레벨 1 -->
-						<div class="mpcs-box ly-inner step-or-1">
-							<p class="area-ask">
-								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
-							</p>
-							<p class="area-step"><em>1</em>단계</p>
-							<p class="area-step-exp1">고객의 행동분석을 위한 준비가 되어있으시군요!</p>
-							<ul class="area-state">
-								<li class="on">
-									<span class="tit">유저 유입 분석</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">마케팅 활동</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li>
-									<span class="tit">전환 활동 분석</span>
-									<span class="state">없음</span>
-								</li>
-								<li>
-									<span class="tit">마케팅 자동화</span>
-									<span class="state">없음</span>
-								</li>
-							</ul>
-							<p class="area-step-exp2">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
-							</p>
-							<ul class="area-button">
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-mark">통합 리포트</a></span></li>
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-inc">마케팅 자동화</a></span></li>
-							</ul>
-						</div>
-						
-						<!-- 유무형 레벨 2 -->
-						<div class="mpcs-box ly-inner step-or-2">
-							<p class="area-ask">
-								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
-							</p>
-							<p class="area-step"><em>2</em>단계</p>
-							<p class="area-step-exp1">고객의 행동 분석과 매출 전환까지 확인하고 계시네요!</p>
-							<ul class="area-state">
-								<li class="on">
-									<span class="tit">유저 유입 분석</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">마케팅 활동</span>
-									<span class="state">없음</span>
-								</li>
-								<li class="on">
-									<span class="tit">전환 활동 분석</span>
-									<span class="state">없음</span>
-								</li>
-								<li>
-									<span class="tit">마케팅 자동화</span>
-									<span class="state">없음</span>
-								</li>
-							</ul>
-							<p class="area-step-exp2">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
-							</p>
-							<ul class="area-button">
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-mark">통합 리포트</a></span></li>
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-inc">마케팅 자동화</a></span></li>
-							</ul>
-						</div>
-						
-						<!-- 유무형 레벨 3 -->
-						<div class="mpcs-box ly-inner step-or-3">
-							<p class="area-ask">
-								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
-							</p>
-							<p class="area-step"><em>3</em>단계</p>
-							<p class="area-step-exp1">마케팅의 Next Step을 고민하고 계신가요?</p>
-							<ul class="area-state">
-								<li class="on">
-									<span class="tit">유저 유입 분석</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">마케팅 활동</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">전환 활동 분석</span>
-									<span class="state">진행 중</span>
-								</li>
-								<li class="on">
-									<span class="tit">마케팅 자동화</span>
-									<span class="state">진행 중</span>
-								</li>
-							</ul>
-							<p class="area-step-exp2">
-								홈페이지의 유입분석 레벨을 올리고 싶다면? <em>‘통합 리포트’</em><br />
-								유저의 홈페이지 이탈을 막고 싶다면? <em>‘마케팅 자동화’</em>
-							</p>
-							<ul class="area-button">
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-mark">통합 리포트</a></span></li>
-								<li><span class="btn-base btn-st1"><a href="#" class="btn-go-inc">마케팅 자동화</a></span></li>
+								<li><span class="btn-base btn-st1"><a href="shop-view1.html" class="btn-go-mark">통합 리포트</a></span></li>
+								<li><span class="btn-base btn-st1"><a href="shop-list.html" class="btn-go-inc">마케팅 자동화</a></span></li>
 							</ul>
 						</div>
 						
@@ -470,7 +309,7 @@
 						<div class="mpcs-box ly-inner step-or-mark">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
 							<p class="area-step">마케팅 보고서</p>
 							<p class="area-step-exp1">
@@ -491,7 +330,7 @@
 						<div class="mpcs-box ly-inner step-or-inc ">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
 							<p class="area-step">매출 증대 방안</p>
 							<p class="area-step-exp1">
@@ -521,7 +360,7 @@
 						<div class="mpcs-box ly-inner step-or-ana">
 							<p class="area-ask">
 								문의하신 <br />
-								<em>tour&travel.co.kr</em> 마케팅 단계
+								<em class="moji-an-url"></em> 마케팅 단계
 							</p>
 							<p class="area-step">분석 도구 설치</p>
 							<p class="area-step-exp1">
@@ -619,7 +458,7 @@
 								</li>
 							</ul>
 							<div class="area-bottom-btn" data-aos="fade-up" data-aos-delay="400">
-								<span class="btn-base btn-st1 small"><a href="#">상품 페이지 보기</a></span>
+								<span class="btn-base btn-st1 small"><a href="./shop-view1.html">상품 페이지 보기</a></span>
 							</div>
 						</div>
 					</div>
@@ -662,7 +501,7 @@
 								</li>
 							</ul>
 							<div class="area-bottom-btn" data-aos="fade-up" data-aos-delay="400">
-								<span class="btn-base btn-st1 small"><a href="#">상품 페이지 보기</a></span>
+								<span class="btn-base btn-st1 small"><a href="shop-list.html">상품 페이지 보기</a></span>
 							</div>
 						</div>
 					</div>
@@ -677,7 +516,7 @@
 						<div class="mcs-cont">
 							<div class="area-img" data-aos="fade-up" data-aos-delay="300"><img src="assets/images/img-service03.jpg" alt="&nbsp;"></div>
 							<div class="info" data-aos="fade-up" data-aos-delay="400">
-								<span class="btn-base btn-st1 small"><a href="#">상담 신청하기</a></span>
+								<span class="btn-base btn-st1 small"><a href="apply-service.html">상담 신청하기</a></span>
 								<p class="exp1">
 									디지털 마케팅, <br />
 									이젠 MOJI로 쉽고 편하게 시작하세요.
@@ -697,7 +536,7 @@
 			<div class="ly-inner">
 				<nav class="footer-info">
 					<ul class="list">
-						<li>(주)이안유</li>
+						<li>(주)인아유</li>
 						<li>대표이사 공연수</li>
 						<li>서울 강남구 논현로 319 정유빌딩 3층</li>
 						<li><a href="#"><strong>개인정보처리방침</strong></a></li>
@@ -722,79 +561,9 @@
 	</div>
 </div>
 
-<script src="assets/js/jquery-3.4.1.min.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/aos.js"></script>
-<script src="assets/js/slick.min.js"></script>
-<script src="assets/js/jcf.js"></script>
-<script src="assets/js/jcf.select.js"></script>
 <script src="assets/js/common.js"></script>
-<script>
-$(function(){
-	//구독형
-	if($('.main-processor').length > 0){
-		//분석하기 클릭
-		var _steptype = ' .step-s-';
-		var _stepNum = 3;
-		$('.main-processor .step-intro .btn-run-diag').on('click', function(e){
-			$('.main-processor .mpcs-box.on').removeClass('on');
-			$('.main-processor .step-loading').addClass('on');
-			$('.main-processor .step-loading .bar').animate({'width':'100%'}, 3000, function(){
-				//유무형인 경우
-				if($('#sel-type').val() == 1){
-					_steptype = ' .step-or-';
-					_stepNum = 4;
-				}
-				setTimeout(function(){
-					$('.main-processor .mpcs-box.on').removeClass('on');
-					$('.main-processor' + _steptype + parseInt(Math.random()*_stepNum)).addClass('on');	
-				},1000);
-			});
-			e.preventDefault();
-		});
-
-		//분석 도구 설치 클릭
-		$('.main-processor .btn-go-ana').on('click', function(e){
-			$('.main-processor .mpcs-box.on').removeClass('on');
-			$('.main-processor' + _steptype + '-ana').addClass('on');	
-			e.preventDefault();
-		});
-
-		//통합 리포트 클릭
-		$('.main-processor .btn-go-mark').on('click', function(e){
-			$('.main-processor .mpcs-box.on').removeClass('on');
-			$('.main-processor' + _steptype + 'mark').addClass('on');	
-			e.preventDefault();
-		});
-
-		//마케팅 자동화 클릭
-		$('.main-processor .btn-go-inc').on('click', function(e){
-			$('.main-processor .mpcs-box.on').removeClass('on');
-			$('.main-processor' + _steptype + 'inc').addClass('on');	
-			e.preventDefault();
-		});
-		
-		//슬라이드
-		/*if($('.mcs-mojiService .mcs-cont .list .roll-img').length > 0){
-			$('.mcs-mojiService .mcs-cont .list .roll-img').each(function(){
-				if($('> div',this).length>1){
-					$(this).slick({
-						draggable: false,
-						arrows:false,
-						dots: true,
-						pauseOnHover: true,
-						pauseOnFocus: false,
-						speed: 1000,
-						autoplaySpeed: 5000,
-						autoplay: true,
-					});
-				}
-			});
-			
-		}*/
-	}
-});	
-</script>
+<!-- <script src="assets/js/dummy.js"></script> -->
+<script src="assets/js/index.js"></script>
 
 </body>
-</html>  
+</html>

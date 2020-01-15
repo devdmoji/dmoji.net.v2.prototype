@@ -188,10 +188,7 @@ var frontScript = window.frontScript || (function(){
 			
 			//select 박스 커스텀
 			if($('.select-base').length > 0){
-				// custom select
-				jcf.setOptions('Select', {wrapNative: false});
-				// custom all
-				jcf.replaceAll();
+				jcf.replace('.select-base select', 'Select', {wrapNative: false});
 			}
 			
 			//외부팝업 ajax 호출
@@ -250,6 +247,24 @@ var frontScript = window.frontScript || (function(){
 			$('.w-header .bg-wh').on('click', function(){
 				$('.w-header.fixed').removeClass('is-open-inp');
 			});
+			
+			//슬라이드
+			if($('.roll-pic-st1').length > 0){
+				$('.roll-pic-st1').each(function(){
+					if($('> div',this).length>1){
+						$(this).slick({
+							draggable: false,
+							arrows:false,
+							dots: true,
+							pauseOnHover: true,
+							pauseOnFocus: false,
+							speed: 1000,
+							autoplaySpeed: 5000,
+							autoplay: true,
+						});
+					}
+				});
+			}
 		}
 	}	
 }());
